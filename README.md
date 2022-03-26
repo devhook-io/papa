@@ -28,13 +28,13 @@ variables: {
 }
 ```
 
-Design Decisions
+## Design Decisions
 
 * Decided to use Absinthe for GraphQL as it would allow the user interface to only request what it needs. Also don't need to create a new route for every mutation/query
 * Had a transaction belong to all 3 of members, pals, and visits because they are able to exist without a transaction, but a transaction cannot exist without those 3.
 * Used a SQL transaction for the making of our transaction to ensure that credits were properly deducted/added to the involved users, so that we aren't on the hook for the extra/lost credits.
 
-Assumptions
+## Assumptions
 
 1. All users will start with 100 credits total. Because no currency was mentioned, the credits are the currency in this application.
 2. A user's credits must be greater than the minutes of the visit they are requesting.
@@ -42,7 +42,7 @@ Assumptions
 4. A user cannot fulfill their own visit
 
 
-To start the server:
+## To start the server:
 
   * Install dependencies with `mix deps.get`
   * Create and migrate your database with `mix ecto.setup`
